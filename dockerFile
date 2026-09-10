@@ -1,0 +1,10 @@
+FROM node:20-alpine
+
+copy ./package.json .
+copy ./package-lock.json .
+
+RUN npm install
+
+copy ./server.js .
+
+CMD ["node","server.js"]
